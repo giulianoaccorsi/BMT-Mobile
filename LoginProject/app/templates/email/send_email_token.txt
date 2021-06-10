@@ -1,0 +1,9 @@
+Prezado {{ user.full_name }},
+
+Para confirmar sua conta, copie e cole <b>{{ token }}</b> na seguinte página:
+
+Se você não sabe o porquê de estar recebendo este email, apenas o ignore.
+
+Atenciosamente,
+
+Equipe LoginProject
