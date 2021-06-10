@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-BMT-Mobile/Pods-BMT-Mobile-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/FormTextField/FormTextField.framework
+${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework

@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (5.4.1)
+  - FormTextField (3.1.0)
+  - Kingfisher (6.1.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - FormTextField
+  - Kingfisher
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - FormTextField
+    - Kingfisher
+
+SPEC CHECKSUMS:
+  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  FormTextField: 229e496b8dae002c5062ea5e961e2140528782e2
+  Kingfisher: f5d8d60a0ef3edd642fd781bae60918599901aff
+
+PODFILE CHECKSUM: c4203155c61df9d34553095f66e41d2f29a5e3e6
+
+COCOAPODS: 1.9.1
