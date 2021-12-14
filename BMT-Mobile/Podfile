@@ -7,6 +7,7 @@ target 'BMT-Mobile' do
 
   # Pods for BMT-Mobile
   pod 'FormTextField'
+  pod 'CBFlashyTabBarController'
   pod 'Kingfisher'
   pod 'Alamofire'
 end

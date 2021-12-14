@@ -8,7 +8,7 @@
 import Foundation
 
 struct API {
-    static var baseURL: String = "https://flask-login-api.herokuapp.com/api"
+    static var baseURL: String = "https://loginprojectfinal.herokuapp.com/api"
     static var users: String = "/users"
     static var tokenUser: String = "/tokens"
     static var solicitationReset: String = "/reset_password_request"

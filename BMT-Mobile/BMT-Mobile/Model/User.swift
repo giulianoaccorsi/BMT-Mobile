@@ -11,4 +11,5 @@ struct User: Decodable {
     let fullName: String
     let email: String
     let password: String
+    let telephone: String?
 }

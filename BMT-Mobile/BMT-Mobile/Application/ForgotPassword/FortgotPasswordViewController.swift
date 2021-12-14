@@ -91,7 +91,7 @@ class FortgotPasswordViewController: UIViewController {
     }
     
     func successToLogin(token: String) {
-        let logged = LoggeViewController(token: token)
+        let logged = HighlightsViewController(token: token)
         logged.modalPresentationStyle = .fullScreen
         self.present(logged, animated: true)
     }

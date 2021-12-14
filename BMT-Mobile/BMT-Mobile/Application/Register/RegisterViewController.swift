@@ -18,22 +18,12 @@ class RegisterViewController: UIViewController {
     var controller: RegisterController = RegisterController()
     var delegate: RegisterViewControllerDelegate?
     
-    let backgroundUIImageView: UIImageView = {
+    let imageLogo: UIImageView = {
         let image = UIImageView(frame: .zero)
-        image.image = UIImage(named: "giuphone_giu")
+        image.image = UIImage(named: "bmtImage")
         image.translatesAutoresizingMaskIntoConstraints = false
         image.contentMode = .scaleToFill
         return image
-    }()
-    
-    let registerLabel: UILabel = {
-        let label = UILabel(frame: .zero)
-        label.text = "Cadastro"
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.numberOfLines = 0
-        label.font = UIFont.boldSystemFont(ofSize: 30.0)
-        label.textColor = .background
-        return label
     }()
     
     let nameLabel: UILabel = {
@@ -129,8 +119,8 @@ class RegisterViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 8
         button.layer.borderWidth = 1
-        button.layer.borderColor = UIColor.white.cgColor
-        button.tintColor = .black
+        button.layer.borderColor = UIColor.background.cgColor
+        button.setTitleColor(.background, for: .normal)
         button.setTitle("Cadastrar", for: .normal)
         return button
     }()
@@ -168,7 +158,7 @@ class RegisterViewController: UIViewController {
         let password = passwordTextField.validate()
         if completeName && validEmail && password {
             
-            let user = User(fullName: nameTextField.text ?? "", email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
+            let user = User(fullName: nameTextField.text ?? "", email: emailTextField.text ?? "", password: passwordTextField.text ?? "", telephone: "TODO")
             controller.registerUser(user: user)
         }
     }
@@ -177,8 +167,7 @@ class RegisterViewController: UIViewController {
 
 extension RegisterViewController: ViewConfiguration {
     func buildViewHierarchy() {
-        view.addSubview(backgroundUIImageView)
-        view.addSubview(registerLabel)
+        view.addSubview(imageLogo)
         view.addSubview(nameLabel)
         view.addSubview(nameTextField)
         view.addSubview(emailLabel)
@@ -191,18 +180,13 @@ extension RegisterViewController: ViewConfiguration {
     func setUpConstraints() {
         NSLayoutConstraint.activate([
             
-            backgroundUIImageView.topAnchor.constraint(equalTo: view.topAnchor),
-            backgroundUIImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            backgroundUIImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            backgroundUIImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            imageLogo.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
+            imageLogo.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            imageLogo.heightAnchor.constraint(equalToConstant: 150),
+            imageLogo.widthAnchor.constraint(equalToConstant: 150),
             
-            registerLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 250),
-            registerLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            registerLabel.heightAnchor.constraint(equalToConstant: 60),
-            registerLabel.widthAnchor.constraint(equalToConstant: 150),
-            
-            nameLabel.topAnchor.constraint(equalTo: registerLabel.bottomAnchor, constant: 16),
-            nameLabel.leadingAnchor.constraint(equalTo: registerLabel.leadingAnchor),
+            nameLabel.topAnchor.constraint(equalTo: imageLogo.bottomAnchor, constant: 16),
+            nameLabel.leadingAnchor.constraint(equalTo: imageLogo.leadingAnchor),
             nameLabel.heightAnchor.constraint(equalToConstant: 40),
             
             nameTextField.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8),
@@ -243,7 +227,7 @@ extension RegisterViewController: ViewConfiguration {
         
         registerButton.addTarget(self, action: #selector(registerTapped), for: .touchUpInside)
         
-        view.backgroundColor = .background
+        view.backgroundColor = .white
         
         
         nameTextField.delegate = self

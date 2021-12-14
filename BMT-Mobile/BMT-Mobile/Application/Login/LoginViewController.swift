@@ -7,19 +7,18 @@
 
 import UIKit
 import FormTextField
+import CBFlashyTabBarController
 
 class LoginViewController: UIViewController {
     
     var controller: LoginController = LoginController()
     
-    let loginLabel: UILabel = {
-        let label = UILabel(frame: .zero)
-        label.text = "Login"
-        label.textColor = .background
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.numberOfLines = 0
-        label.font = UIFont.boldSystemFont(ofSize: 30)
-        return label
+    let imageLogo: UIImageView = {
+        let image = UIImageView(frame: .zero)
+        image.image = UIImage(named: "bmtImage")
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.contentMode = .scaleToFill
+        return image
     }()
     
     let emailLabel: UILabel = {
@@ -27,17 +26,9 @@ class LoginViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Email"
         label.font = UIFont.boldSystemFont(ofSize: 12.0)
-        label.textColor = .background
+        label.textColor = .black
         label.numberOfLines = 0
         return label
-    }()
-    
-    let backgroundUIImageView: UIImageView = {
-        let image = UIImageView(frame: .zero)
-        image.image = UIImage(named: "giuphone_giu")
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.contentMode = .scaleToFill
-        return image
     }()
     
     lazy var emailTextField:FormTextField = {
@@ -66,7 +57,7 @@ class LoginViewController: UIViewController {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.boldSystemFont(ofSize: 12.0)
-        label.textColor = .background
+        label.textColor = .black
         label.text = "Password"
         label.numberOfLines = 0
         return label
@@ -93,7 +84,7 @@ class LoginViewController: UIViewController {
     let forgotPasswordButton: UIButton = {
         let button = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(.background, for: .normal)
+        button.setTitleColor(.black, for: .normal)
         button.titleLabel?.font = UIFont(name: "Arial", size: 15)
         button.setTitle("Esqueceu sua senha?", for: .normal)
         return button
@@ -102,7 +93,7 @@ class LoginViewController: UIViewController {
     let registerButton: UIButton = {
         let button = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.tintColor = .white
+        button.setTitleColor(.black, for: .normal)
         button.setTitle("Novo Aqui? Cadastre-se", for: .normal)
         button.titleLabel?.font = UIFont(name: "Arial", size: 15)
         return button
@@ -113,8 +104,8 @@ class LoginViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 8
         button.layer.borderWidth = 1
-        button.layer.borderColor = UIColor.white.cgColor
-        button.tintColor = .black
+        button.layer.borderColor = UIColor.black.cgColor
+        button.setTitleColor(.black, for: .normal)
         button.setTitle("Login", for: .normal)
         return button
     }()
@@ -155,9 +146,20 @@ class LoginViewController: UIViewController {
     }
     
     func successToLogin(token: String) {
-        let logged = LoggeViewController(token: token)
-        logged.modalPresentationStyle = .fullScreen
-        self.present(logged, animated: true)
+        
+        let highlightsVC = HighlightsViewController(token: token)
+        highlightsVC.tabBarItem = UITabBarItem(title: "Destaques", image: #imageLiteral(resourceName: "comprar30").withRenderingMode(.alwaysOriginal), tag: 0)
+        let adVC = AdViewController(token: token)
+        adVC.tabBarItem = UITabBarItem(title: "Anúncios", image: #imageLiteral(resourceName: "announce30"), tag: 0)
+        let sairVC = LeaveViewController()
+        sairVC.tabBarItem = UITabBarItem(title: "Sair", image: #imageLiteral(resourceName: "leave25").withRenderingMode(.alwaysOriginal), tag: 0)
+        
+        
+        let tabBarController = CBFlashyTabBarController()
+        tabBarController.viewControllers = [highlightsVC, adVC, sairVC]
+        tabBarController.tabBar.tintColor = .black
+        tabBarController.modalPresentationStyle = .fullScreen
+        self.present(tabBarController, animated: true)
     }
     
     func failedToLogin(error: NSError) {
@@ -175,9 +177,8 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController: ViewConfiguration {
     func buildViewHierarchy() {
-        view.addSubview(backgroundUIImageView)
         view.addSubview(loginButton)
-        view.addSubview(loginLabel)
+        view.addSubview(imageLogo)
         view.addSubview(emailLabel)
         view.addSubview(emailTextField)
         view.addSubview(passwordLabel)
@@ -189,23 +190,13 @@ extension LoginViewController: ViewConfiguration {
     func setUpConstraints() {
         NSLayoutConstraint.activate([
             
-            backgroundUIImageView.topAnchor.constraint(equalTo: view.topAnchor),
-            backgroundUIImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            backgroundUIImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            backgroundUIImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            imageLogo.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            imageLogo.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            imageLogo.heightAnchor.constraint(equalToConstant: 150),
+            imageLogo.widthAnchor.constraint(equalToConstant: 150),
             
-            loginButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
-            loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -35),
-            loginButton.heightAnchor.constraint(equalToConstant: 60),
-            loginButton.widthAnchor.constraint(equalToConstant: 150),
-            
-            loginLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 250),
-            loginLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            loginLabel.heightAnchor.constraint(equalToConstant: 60),
-            loginLabel.widthAnchor.constraint(equalToConstant: 150),
-            
-            emailLabel.topAnchor.constraint(equalTo: loginLabel.bottomAnchor, constant: 16),
-            emailLabel.leadingAnchor.constraint(equalTo: loginLabel.leadingAnchor),
+            emailLabel.topAnchor.constraint(equalTo: imageLogo.bottomAnchor, constant: 16),
+            emailLabel.leadingAnchor.constraint(equalTo: imageLogo.leadingAnchor),
             emailLabel.heightAnchor.constraint(equalToConstant: 40),
             emailLabel.widthAnchor.constraint(equalToConstant: 80),
             
@@ -215,7 +206,7 @@ extension LoginViewController: ViewConfiguration {
             emailTextField.heightAnchor.constraint(equalToConstant: 40),
             
             passwordLabel.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 16),
-            passwordLabel.leadingAnchor.constraint(equalTo: loginLabel.leadingAnchor),
+            passwordLabel.leadingAnchor.constraint(equalTo: imageLogo.leadingAnchor),
             passwordLabel.heightAnchor.constraint(equalToConstant: 40),
             passwordLabel.widthAnchor.constraint(equalToConstant: 80),
             
@@ -224,14 +215,19 @@ extension LoginViewController: ViewConfiguration {
             passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
             passwordTextField.heightAnchor.constraint(equalToConstant: 40),
             
-            registerButton.topAnchor.constraint(equalTo: loginButton.centerYAnchor),
-            registerButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            forgotPasswordButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 8),
+            forgotPasswordButton.leadingAnchor.constraint(equalTo: imageLogo.leadingAnchor),
+            forgotPasswordButton.heightAnchor.constraint(equalToConstant: 30),
+            
+            loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            loginButton.topAnchor.constraint(equalTo: forgotPasswordButton.bottomAnchor, constant: 10),
+            loginButton.heightAnchor.constraint(equalToConstant: 60),
+            loginButton.widthAnchor.constraint(equalToConstant: 150),
+            
+            registerButton.centerXAnchor.constraint(equalTo: loginButton.centerXAnchor),
+            registerButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 10),
             registerButton.heightAnchor.constraint(equalToConstant: 30),
             registerButton.widthAnchor.constraint(equalToConstant: 180),
-            
-            forgotPasswordButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 8),
-            forgotPasswordButton.leadingAnchor.constraint(equalTo: loginLabel.leadingAnchor),
-            forgotPasswordButton.heightAnchor.constraint(equalToConstant: 30),
             
             
         ])
@@ -241,7 +237,7 @@ extension LoginViewController: ViewConfiguration {
         loginButton.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
         registerButton.addTarget(self, action: #selector(registerTapped), for: .touchUpInside)
         forgotPasswordButton.addTarget(self, action: #selector(forgotPasswordTapped), for: .touchUpInside)
-        self.view.backgroundColor = .background
+        self.view.backgroundColor = .white
         view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
     }
     

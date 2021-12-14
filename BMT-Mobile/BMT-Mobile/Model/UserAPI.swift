@@ -11,13 +11,14 @@ struct UserAPI: Codable {
     let email: String
     let emailConfirmed: Bool
     let fullName: String
+    let telephone: String
     let id: Int
+    let admin: Bool
 
     enum CodingKeys: String, CodingKey {
-        case email
+        case email, telephone, id, admin
         case emailConfirmed = "email_confirmed"
         case fullName = "full_name"
-        case id
     }
 }
 

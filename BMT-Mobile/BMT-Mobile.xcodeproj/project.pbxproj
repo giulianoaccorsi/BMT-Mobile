@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		190E3827265B1D0D00F5A06A /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190E3826265B1D0D00F5A06A /* API.swift */; };
 		190E3829265B1D1C00F5A06A /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190E3828265B1D1C00F5A06A /* APIManager.swift */; };
-		195260DB265F1B21003FFEAE /* CreateImmobileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195260DA265F1B21003FFEAE /* CreateImmobileViewController.swift */; };
-		195260DD265F1B2B003FFEAE /* CreateImmobileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195260DC265F1B2B003FFEAE /* CreateImmobileController.swift */; };
-		195260DF265F2E19003FFEAE /* ImgurAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195260DE265F2E19003FFEAE /* ImgurAPI.swift */; };
 		195260E1265F3490003FFEAE /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195260E0265F3490003FFEAE /* SessionManager.swift */; };
 		195260E4265F4DD5003FFEAE /* FortgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195260E3265F4DD5003FFEAE /* FortgotPasswordViewController.swift */; };
 		195260E6265F4DE1003FFEAE /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195260E5265F4DE1003FFEAE /* ForgotPasswordController.swift */; };
@@ -19,32 +16,32 @@
 		195260EB265F4E06003FFEAE /* ConfirmationPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195260EA265F4E06003FFEAE /* ConfirmationPasswordController.swift */; };
 		195D06E52659D47200499592 /* StyleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195D06E42659D47200499592 /* StyleTextField.swift */; };
 		1969AF75265B205600804AC9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1969AF74265B205600804AC9 /* User.swift */; };
-		197A6BED265A10EC00E61200 /* LoggedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197A6BEC265A10EC00E61200 /* LoggedViewController.swift */; };
+		197A6BED265A10EC00E61200 /* AdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197A6BEC265A10EC00E61200 /* AdViewController.swift */; };
 		19AB7B93265945D10077661F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19AB7B92265945D10077661F /* AppDelegate.swift */; };
 		19AB7B95265945D10077661F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19AB7B94265945D10077661F /* SceneDelegate.swift */; };
-		19AB7B97265945D10077661F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19AB7B96265945D10077661F /* HomeViewController.swift */; };
 		19AB7B9C265945D20077661F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19AB7B9B265945D20077661F /* Assets.xcassets */; };
 		19AB7B9F265945D20077661F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19AB7B9D265945D20077661F /* LaunchScreen.storyboard */; };
 		19AB7BAC26594CC70077661F /* ViewConfigurationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19AB7BAB26594CC70077661F /* ViewConfigurationProtocol.swift */; };
 		19AB7BAF265954350077661F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19AB7BAE265954350077661F /* LoginViewController.swift */; };
 		19AB7BB126598A770077661F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19AB7BB026598A770077661F /* RegisterViewController.swift */; };
-		19D22F05265A133F009DB576 /* LoggedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D22F04265A133F009DB576 /* LoggedDataSource.swift */; };
-		19D22F07265A134B009DB576 /* LoggedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D22F06265A134B009DB576 /* LoggedController.swift */; };
+		19D22F05265A133F009DB576 /* AdDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D22F04265A133F009DB576 /* AdDataSource.swift */; };
+		19D22F07265A134B009DB576 /* AdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D22F06265A134B009DB576 /* AdController.swift */; };
 		19D22F09265A1391009DB576 /* Immobile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D22F08265A1391009DB576 /* Immobile.swift */; };
 		19D22F0B265A155A009DB576 /* ImmobileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D22F0A265A155A009DB576 /* ImmobileCell.swift */; };
 		19D22F0D265A1F51009DB576 /* UIColor+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D22F0C265A1F51009DB576 /* UIColor+Custom.swift */; };
 		19F26A88265C6CEA007375C5 /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F26A87265C6CEA007375C5 /* UserAPI.swift */; };
 		19F26A8A265C778E007375C5 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F26A89265C778E007375C5 /* RegisterController.swift */; };
 		19F26A8C265CA261007375C5 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F26A8B265CA261007375C5 /* LoginController.swift */; };
+		19F7354F27076F4600041037 /* HighlightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F7354E27076F4600041037 /* HighlightsViewController.swift */; };
+		19F7355127076F4E00041037 /* HighlightsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F7355027076F4E00041037 /* HighlightsDataSource.swift */; };
+		19F73553270771C800041037 /* HighlightsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F73552270771C800041037 /* HighlightsController.swift */; };
+		19F73556270773AF00041037 /* LeaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F73555270773AF00041037 /* LeaveViewController.swift */; };
 		D6A444C99919B3BDB25E7E7F /* Pods_BMT_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC7D4EAFFADBF78F9A515DD7 /* Pods_BMT_Mobile.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		190E3826265B1D0D00F5A06A /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		190E3828265B1D1C00F5A06A /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
-		195260DA265F1B21003FFEAE /* CreateImmobileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateImmobileViewController.swift; sourceTree = "<group>"; };
-		195260DC265F1B2B003FFEAE /* CreateImmobileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateImmobileController.swift; sourceTree = "<group>"; };
-		195260DE265F2E19003FFEAE /* ImgurAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurAPI.swift; sourceTree = "<group>"; };
 		195260E0265F3490003FFEAE /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		195260E3265F4DD5003FFEAE /* FortgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortgotPasswordViewController.swift; sourceTree = "<group>"; };
 		195260E5265F4DE1003FFEAE /* ForgotPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordController.swift; sourceTree = "<group>"; };
@@ -52,25 +49,28 @@
 		195260EA265F4E06003FFEAE /* ConfirmationPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationPasswordController.swift; sourceTree = "<group>"; };
 		195D06E42659D47200499592 /* StyleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleTextField.swift; sourceTree = "<group>"; };
 		1969AF74265B205600804AC9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		197A6BEC265A10EC00E61200 /* LoggedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedViewController.swift; sourceTree = "<group>"; };
+		197A6BEC265A10EC00E61200 /* AdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdViewController.swift; sourceTree = "<group>"; };
 		19AB7B8F265945D10077661F /* BMT-Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BMT-Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		19AB7B92265945D10077661F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19AB7B94265945D10077661F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		19AB7B96265945D10077661F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		19AB7B9B265945D20077661F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		19AB7B9E265945D20077661F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		19AB7BA0265945D20077661F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19AB7BAB26594CC70077661F /* ViewConfigurationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfigurationProtocol.swift; sourceTree = "<group>"; };
 		19AB7BAE265954350077661F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		19AB7BB026598A770077661F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		19D22F04265A133F009DB576 /* LoggedDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedDataSource.swift; sourceTree = "<group>"; };
-		19D22F06265A134B009DB576 /* LoggedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedController.swift; sourceTree = "<group>"; };
+		19D22F04265A133F009DB576 /* AdDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdDataSource.swift; sourceTree = "<group>"; };
+		19D22F06265A134B009DB576 /* AdController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdController.swift; sourceTree = "<group>"; };
 		19D22F08265A1391009DB576 /* Immobile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Immobile.swift; sourceTree = "<group>"; };
 		19D22F0A265A155A009DB576 /* ImmobileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmobileCell.swift; sourceTree = "<group>"; };
 		19D22F0C265A1F51009DB576 /* UIColor+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Custom.swift"; sourceTree = "<group>"; };
 		19F26A87265C6CEA007375C5 /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
 		19F26A89265C778E007375C5 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		19F26A8B265CA261007375C5 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		19F7354E27076F4600041037 /* HighlightsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightsViewController.swift; sourceTree = "<group>"; };
+		19F7355027076F4E00041037 /* HighlightsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightsDataSource.swift; sourceTree = "<group>"; };
+		19F73552270771C800041037 /* HighlightsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightsController.swift; sourceTree = "<group>"; };
+		19F73555270773AF00041037 /* LeaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveViewController.swift; sourceTree = "<group>"; };
 		89AE2441BD4CF6D4AD3B6CCD /* Pods-BMT-Mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMT-Mobile.debug.xcconfig"; path = "Target Support Files/Pods-BMT-Mobile/Pods-BMT-Mobile.debug.xcconfig"; sourceTree = "<group>"; };
 		BC7D4EAFFADBF78F9A515DD7 /* Pods_BMT_Mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BMT_Mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C84C29307F7FFB3F26421685 /* Pods-BMT-Mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMT-Mobile.release.xcconfig"; path = "Target Support Files/Pods-BMT-Mobile/Pods-BMT-Mobile.release.xcconfig"; sourceTree = "<group>"; };
@@ -95,15 +95,6 @@
 				C84C29307F7FFB3F26421685 /* Pods-BMT-Mobile.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		195260D9265F1B04003FFEAE /* CreateImmobile */ = {
-			isa = PBXGroup;
-			children = (
-				195260DA265F1B21003FFEAE /* CreateImmobileViewController.swift */,
-				195260DC265F1B2B003FFEAE /* CreateImmobileController.swift */,
-			);
-			path = CreateImmobile;
 			sourceTree = "<group>";
 		};
 		195260E2265F4DC2003FFEAE /* ForgotPassword */ = {
@@ -133,14 +124,6 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		197A6BE9265A10C000E61200 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				19AB7B96265945D10077661F /* HomeViewController.swift */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
 		197A6BEA265A10C800E61200 /* Register */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,15 +133,15 @@
 			path = Register;
 			sourceTree = "<group>";
 		};
-		197A6BEB265A10DE00E61200 /* Logged */ = {
+		197A6BEB265A10DE00E61200 /* Ad */ = {
 			isa = PBXGroup;
 			children = (
-				197A6BEC265A10EC00E61200 /* LoggedViewController.swift */,
-				19D22F04265A133F009DB576 /* LoggedDataSource.swift */,
-				19D22F06265A134B009DB576 /* LoggedController.swift */,
+				197A6BEC265A10EC00E61200 /* AdViewController.swift */,
+				19D22F04265A133F009DB576 /* AdDataSource.swift */,
+				19D22F06265A134B009DB576 /* AdController.swift */,
 				19D22F0A265A155A009DB576 /* ImmobileCell.swift */,
 			);
-			path = Logged;
+			path = Ad;
 			sourceTree = "<group>";
 		};
 		19AB7B86265945D10077661F = {
@@ -193,13 +176,13 @@
 		19AB7BA6265946540077661F /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				197A6BE8265A10B800E61200 /* Login */,
+				197A6BEA265A10C800E61200 /* Register */,
+				19F73554270773A100041037 /* Leave */,
 				195260E7265F4DE8003FFEAE /* ConfirmationPassword */,
 				195260E2265F4DC2003FFEAE /* ForgotPassword */,
-				195260D9265F1B04003FFEAE /* CreateImmobile */,
-				197A6BEB265A10DE00E61200 /* Logged */,
-				197A6BEA265A10C800E61200 /* Register */,
-				197A6BE9265A10C000E61200 /* Home */,
-				197A6BE8265A10B800E61200 /* Login */,
+				19F7354D27076EE900041037 /* Highlights */,
+				197A6BEB265A10DE00E61200 /* Ad */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -210,7 +193,6 @@
 				19D22F08265A1391009DB576 /* Immobile.swift */,
 				1969AF74265B205600804AC9 /* User.swift */,
 				19F26A87265C6CEA007375C5 /* UserAPI.swift */,
-				195260DE265F2E19003FFEAE /* ImgurAPI.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -246,6 +228,24 @@
 				19D22F0C265A1F51009DB576 /* UIColor+Custom.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		19F7354D27076EE900041037 /* Highlights */ = {
+			isa = PBXGroup;
+			children = (
+				19F7354E27076F4600041037 /* HighlightsViewController.swift */,
+				19F7355027076F4E00041037 /* HighlightsDataSource.swift */,
+				19F73552270771C800041037 /* HighlightsController.swift */,
+			);
+			path = Highlights;
+			sourceTree = "<group>";
+		};
+		19F73554270773A100041037 /* Leave */ = {
+			isa = PBXGroup;
+			children = (
+				19F73555270773AF00041037 /* LeaveViewController.swift */,
+			);
+			path = Leave;
 			sourceTree = "<group>";
 		};
 		E45291ABC0CC53065460C0EA /* Frameworks */ = {
@@ -372,29 +372,29 @@
 				19F26A8C265CA261007375C5 /* LoginController.swift in Sources */,
 				195260E1265F3490003FFEAE /* SessionManager.swift in Sources */,
 				19AB7BAF265954350077661F /* LoginViewController.swift in Sources */,
-				195260DF265F2E19003FFEAE /* ImgurAPI.swift in Sources */,
+				19F7355127076F4E00041037 /* HighlightsDataSource.swift in Sources */,
+				19F7354F27076F4600041037 /* HighlightsViewController.swift in Sources */,
+				19F73553270771C800041037 /* HighlightsController.swift in Sources */,
 				195D06E52659D47200499592 /* StyleTextField.swift in Sources */,
 				195260E4265F4DD5003FFEAE /* FortgotPasswordViewController.swift in Sources */,
 				19D22F09265A1391009DB576 /* Immobile.swift in Sources */,
-				19AB7B97265945D10077661F /* HomeViewController.swift in Sources */,
 				19F26A88265C6CEA007375C5 /* UserAPI.swift in Sources */,
 				1969AF75265B205600804AC9 /* User.swift in Sources */,
 				195260E6265F4DE1003FFEAE /* ForgotPasswordController.swift in Sources */,
-				19D22F07265A134B009DB576 /* LoggedController.swift in Sources */,
+				19D22F07265A134B009DB576 /* AdController.swift in Sources */,
 				19AB7B93265945D10077661F /* AppDelegate.swift in Sources */,
 				19F26A8A265C778E007375C5 /* RegisterController.swift in Sources */,
-				195260DB265F1B21003FFEAE /* CreateImmobileViewController.swift in Sources */,
-				195260DD265F1B2B003FFEAE /* CreateImmobileController.swift in Sources */,
 				190E3827265B1D0D00F5A06A /* API.swift in Sources */,
 				19D22F0D265A1F51009DB576 /* UIColor+Custom.swift in Sources */,
 				195260E9265F4DFD003FFEAE /* ConfirmationPasswordViewController.swift in Sources */,
 				19AB7BB126598A770077661F /* RegisterViewController.swift in Sources */,
 				19D22F0B265A155A009DB576 /* ImmobileCell.swift in Sources */,
 				195260EB265F4E06003FFEAE /* ConfirmationPasswordController.swift in Sources */,
-				19D22F05265A133F009DB576 /* LoggedDataSource.swift in Sources */,
+				19D22F05265A133F009DB576 /* AdDataSource.swift in Sources */,
 				19AB7B95265945D10077661F /* SceneDelegate.swift in Sources */,
+				19F73556270773AF00041037 /* LeaveViewController.swift in Sources */,
 				190E3829265B1D1C00F5A06A /* APIManager.swift in Sources */,
-				197A6BED265A10EC00E61200 /* LoggedViewController.swift in Sources */,
+				197A6BED265A10EC00E61200 /* AdViewController.swift in Sources */,
 				19AB7BAC26594CC70077661F /* ViewConfigurationProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
