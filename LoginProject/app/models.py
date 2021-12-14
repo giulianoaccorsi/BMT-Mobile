@@ -39,9 +39,11 @@ class User(UserMixin, PaginatedAPIMixin, db.Model):
     __tablename__ = "users"
 
     id = db.Column(db.Integer, primary_key=True)
+    admin = db.Column(db.Boolean, default=False)
     email = db.Column(db.String(60), index=True, unique=True)
     password = db.Column(db.String(128))
     full_name = db.Column(db.String(60), index=True)
+    telephone = db.Column(db.String(30))
     email_confirmed = db.Column(db.Boolean, default=True)
     ad = db.relationship("Ad", backref="user", lazy="dynamic")
     token = db.Column(db.String(32), index=True, unique=True)
@@ -116,12 +118,14 @@ class User(UserMixin, PaginatedAPIMixin, db.Model):
             "id": self.id,
             "full_name": self.full_name,
             "email": self.email,
+            "telephone": self.telephone,
             "email_confirmed": self.email_confirmed,
+            "admin": self.admin
         }
         return data
 
     def from_dict(self, data, new_user=False):
-        for field in ["email", "full_name"]:
+        for field in ["email", "full_name", "telephone", "admin"]:
             if field in data:
                 setattr(self, field, data[field])
         if new_user and "password" in data:
@@ -139,9 +143,16 @@ class Ad(PaginatedAPIMixin, db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
-    title = db.Column(db.String(60), index=True)
+    top = db.Column(db.Boolean, default=False)
+    address = db.Column(db.String(60), index=True)
     description = db.Column(db.String(300))
     img_url = db.Column(db.String(300))
+    for_sale = db.Column(db.Boolean)
+    price = db.Column(db.Float)
+    city = db.Column(db.String(100))
+    district = db.Column(db.String(100))
+    state = db.Column(db.String(3))
+    telephone = db.Column(db.String(20))
     created_at = db.Column(db.DateTime, default=datetime.utcnow())
 
     def __repr__(self):
@@ -151,14 +162,21 @@ class Ad(PaginatedAPIMixin, db.Model):
         data = {
             "id": self.id,
             "user_id": self.user_id,
-            "title": self.title,
+            "address": self.address,
             "description": self.description,
+            "for_sale": self.for_sale,
+            "price": self.price,
+            "city": self.city,
+            "district": self.district,
+            "state": self.state,
             "img_url": self.img_url,
+            "top": self.top,
+            "telephone": self.telephone,
             "created_at": self.created_at,
         }
         return data
 
     def from_dict(self, data):
-        for field in ["title", "description", "img_url"]:
+        for field in ["address", "description", "district", "img_url", "for_sale", "price", "city", "state", "top", "telephone"]:
             if field in data:
                 setattr(self, field, data[field])

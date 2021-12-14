@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="s-card-principal">
+        <div class="container">
+            <div class="main-card-principal">
+                    <div class="card-principal">
+                        <a href="{{ url_for('main.show_ads') }}">
+                            <p style="font-size: 28px;margin-bottom: 20px;color: #373C64;">Anúncios</p>
+                            <img src="{{ url_for('static', filename='img/write-svgrepo-com.svg') }}" alt="Anúncios">
+                        </a>
+                    </div>
+                <div class="card-principal">
+                    <a href="{{ url_for('main.edit_user', id=current_user.id) }}">
+                        <p style="font-size: 28px;margin-bottom: 20px;color: #373C64;">Perfil</p>
+                        <img src="{{ url_for('static', filename='img/user-svgrepo-com.svg') }}" alt="Anúncios">
+                    </a>
+                </div>
+                <div class="card-principal">
+                    <a href="{{ url_for('auth.logout') }}">
+                        <p style="font-size: 28px;margin-bottom: 20px; color: #373C64;">Logout</p>
+                        <img src="{{ url_for('static', filename='img/logout-svgrepo-com.svg') }}" alt="Anúncios">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

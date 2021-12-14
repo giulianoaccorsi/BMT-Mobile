@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ title }} | Home</title>
+    <link href="{{ url_for('static', filename='css/base.css') }}" rel="stylesheet">
+    {% block head %}
+    {% endblock %}
+</head>
+<body class="fade-in">
+    <header>
+        <div class="container">
+            <div class="main-header">
+                <div class="img-header">
+                    <a href="{{ url_for('main.homepage') }}">
+                        <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="Logo">
+                    </a>
+                </div>
+                {% if current_user.is_annonymous %}
+                    <a href="" class="btn btn-primary">Login</a>
+                {% else %}
+                       <a href="{{ url_for('main.add_ads') }}" class="btn btn-primary">Anunciar</a>
+                    {% if current_user.admin %}
+                       <a href="{{ url_for('auth.register') }}" class="btn btn-primary">Cadastrar usuário</a></a>
+                    {% else %}
+                        <p style="font-size: 28px;color: #aa9a9a">Bem vindo, {{ current_user.full_name.split(" ")[0] }}!</p>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+    </header>
+    {% block content %}{% endblock %}
+    {% block scripts %}{% endblock %}
+    <footer>
+        <div class="container">
+            <div class="main-footer">
+                <div class="text">
+                    <span>BMT mobile. Alguns direitos reservados</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>

@@ -5,6 +5,7 @@ from flask_migrate import Migrate
 from flask_mail import Mail
 from flask_cors import CORS
 from flask_login import LoginManager
+from flask_bootstrap import Bootstrap
 
 login = LoginManager()
 login.login_message = "Você deve fazer login para acessar esta página"
@@ -12,6 +13,7 @@ login.login_view = "auth.login"
 db = SQLAlchemy()
 migrate = Migrate()
 mail = Mail()
+bootstrap = Bootstrap()
 
 
 
@@ -22,6 +24,7 @@ def create_app(config_class=Config):
     migrate.init_app(app, db, render_as_batch=True)
     mail.init_app(app)
     login.init_app(app)
+    bootstrap.init_app(app)
     CORS(app, resources={r"/api/*": {"origins": "*"}})
 
     from app.api import api as api_blueprint

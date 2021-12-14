@@ -10,7 +10,7 @@ def get_user_token():
     if g.current_user.email_confirmed:
         token = g.current_user.get_token()
         db.session.commit()
-        return jsonify({"token": token})
+        return jsonify({"token": token, "user_id": g.current_user.id})
     return jsonify({"message": "Confirm your email first"}), 403
 
 

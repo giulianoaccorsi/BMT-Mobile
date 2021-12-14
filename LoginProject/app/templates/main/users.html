@@ -37,7 +37,7 @@
                         <th scope="col">#</th>
                         <th scope="col">Nome</th>
                         <th scope="col">Email</th>
-                        <th scope="col">Anúncios</th>
+                        <th scope="col">Qtd. Anúncios</th>
                         <th scope="col">Editar</th>
                         <th scope="col">Deletar</th>
                       </tr>
@@ -48,7 +48,7 @@
                         <th scope="row">{{ user.id }}</th>
                         <td>{{ user.full_name }}</td>
                         <td>{{ user.email }}</td>
-                        <td>-</td>
+                        <td>{{ user.ad.count() }}</td>
                         <td><a href="{{ url_for('main.edit_user', id=user.id) }}" class="btn btn-lg mx-1 btn-success"> Editar</a></td>
                         <td><a href="{{ url_for('main.delete_user', id=user.id) }}" class="btn btn-lg mx-1 btn-danger"> Deletar</a></td>
                       </tr>
@@ -77,6 +77,9 @@
           		</nav>
 		      </div>
             </div>
+            {% if current_user.admin %}
+              <td><a href="{{ url_for('main.ads') }}" class="btn btn-lg mx-1 btn-primary"> Adicionar anúncio</a></td>
+            {% endif %}
               <p class="login-wrapper-footer-text"><a href="{{ url_for('auth.logout') }}" class="text-reset">Finalizar Sessão</a></p>
           </div>
         </div>

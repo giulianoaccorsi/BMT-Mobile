@@ -8,18 +8,27 @@ from .forms import (
 from app import db
 from app.models import User
 from app.email import send_password_reset_email
+from app.main.utils import admin_required
 
 
 @auth.route("/cadastrar", methods=["GET", "POST"])
+@login_required
+@admin_required
 def register():
     if request.method == "POST":
         name = request.form["name"]
         email = request.form["email"]
+        telephone = request.form["phone"]
+        password = request.form["password"]
+        confirm_password = request.form["passwordc"]
         user = User.query.filter_by(email=email).first()
         if user:
             flash("Um usuário com este email já está cadastrado!", "error")
             return redirect(url_for("auth.login"))
-        user = User(full_name=name, email=email)
+        elif password != confirm_password:
+            flash("As senhas não batem", "error")
+            return redirect(url_for("auth.register"))
+        user = User(full_name=name, email=email, telephone=telephone)
         user.set_password(request.form["password"])
         db.session.add(user)
         db.session.commit()

@@ -5,6 +5,9 @@ from app.api import api
 from app.api.errors import bad_request
 from app.api.auth import token_auth
 from datetime import datetime
+import os
+
+basedir = os.path.abspath(os.path.dirname(__file__))
 
 now = datetime.utcnow()
 
@@ -15,9 +18,11 @@ def contains_ads_parameters(data):
         and "title" not in data
         and "description" not in data
         and "img_url" not in data
+        and "telophone" not in data
     ):
         return False
     return True
+
 
 @api.get('/ads/<int:id>')
 @token_auth.login_required

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="s-card-second">
+        <div class="container">
+            <div class="main-card-second">
+                {% for ad in ads %}
+                {% if current_user.admin %}
+                <a href="{{ url_for('main.edit_ads', id=ad.id) }}">
+                    <div class="card-second">
+                        <div class="card">
+                            {% if ad.top %}<span>ANUNCIO TOP!</span>{% endif %}
+                            <span>{{ ad.id }}</span>
+                            <span>{{ ad.address }}</span>
+                            <span>{% if ad.for_sale %}à venda{% else %}Aluguel{% endif %}</span>
+                        </div>
+                </a>
+                {% else %}
+                    <div class="card-second">
+                        <div class="card">
+                            <span>{{ ad.id }}</span>
+                            <span>{{ ad.address }}</span>
+                            <span>{% if ad.for_sale %}à venda{% else %}Aluguel{% endif %}</span>
+                        </div>
+                {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
